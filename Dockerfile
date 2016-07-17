@@ -14,5 +14,4 @@ COPY . /var/www/GoGongServer/
 WORKDIR "/var/www/GoGongServer/"
 RUN pip3 install -r requirements.txt
 
-#run apache2
-RUN /etc/init.d/apache2 start
+
