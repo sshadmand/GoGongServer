@@ -17,6 +17,9 @@ Before we build the Docker image, change the BASE_URL in the project's Django se
 BASE_API_URL = "http://your-url"
 ```
 
+*Note: if anyone knows a better way to set that up LMK!*
+
+
 ## Deploying with Docker
 
 Once you have your server setup with docker installed...
