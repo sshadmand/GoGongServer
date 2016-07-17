@@ -12,18 +12,29 @@ Once you have your server setup with docker installed, clone this repo and chang
 
 First, build your image based on the local Dockerfile:
 
-`#> sudo docker build -t gogongimage .`
+```
+#> sudo docker build -t gogongimage .
+```
 
 Then, run a docker container based on the image and mapped to 80:80:
 
-`#> sudo docker run -itd -p 80:80 --name=gogongserver gogongimage /bin/bash`
+```
+#> sudo docker run -itd -p 80:80 --name=gogongserver gogongimage /bin/bash
+```
 
-Finally, attach to the container and run apache:
+Finally, attach to the container and run apache (If anyone knows how to run apache on build LMK):
 
 ```
 #> sudo docker attach gogongserver
 [server-container-id]#> /etc/init.d/apache2 start
 ```
+
+The server is up and running, but you will need to map your server's public URL so that shares generate properly. (If anyone knows how to set this in a Dockerfile LMK.). Do *__not__* end the URL in a slash.:
+
+```
+[server-container-id]#> export BASE_URL='http://your-server-ip-or-name'
+```
+
 
 ## For Local Development
 
