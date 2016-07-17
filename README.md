@@ -7,6 +7,26 @@ Or, check out the GoGong App repo: https://github.com/sshadmand/GoGongApp
 
 # Server Setup
 
+## Deploying with Docker
+Once you have your server setup with docker installed, clone this repo and change your working directory to this project's root folder. 
+
+First, build your image based on the local Dockerfile:
+
+`#> sudo docker build -t gogongimage .`
+
+Then, run a docker container based on the image and mapped to 80:80:
+
+`#> sudo docker run -itd -p 80:80 --name=gogongserver gogongimage /bin/bash`
+
+Finally, attach to the container and run apache:
+
+```
+#> sudo docker attach gogongserver
+[server-container-id]#> /etc/init.d/apache2 start
+```
+
+## For Local Development
+
 GoGong Server runs on Python3 and Django 1.9. It is highly recomended you [use virtualenv to install your packages](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and run your server locally so as to mitigate environment hicups. (Dockerfile coming soon.) 
 
 In short, after cloing the repo, cd into the project root and run:
