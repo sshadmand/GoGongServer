@@ -8,4 +8,6 @@ RUN apt-get -y install python3-pip libapache2-mod-wsgi-py3
 COPY gogong.conf /etc/apache2/sites-enabled/
 COPY . /var/www/GoGongServer/
 
+RUN cd /var/www/GoGongServer/ && pip3 install -r requirements.txt
+
 RUN /etc/init.d/apache2 start
