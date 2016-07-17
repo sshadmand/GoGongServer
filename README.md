@@ -1,5 +1,5 @@
 # GoGong Server
-Server component for the open source screen capture and url sharing platform.
+Server component for the open-source screen capture and url sharing platform.
 
 Learn more about the entire suite of components at https://sshadmand.github.io/GoGong/
 
