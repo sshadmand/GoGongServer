@@ -14,4 +14,7 @@ COPY . /var/www/GoGongServer/
 WORKDIR "/var/www/GoGongServer/"
 RUN pip3 install -r requirements.txt
 
+# experimental !
+# echo export BASE_URL='http://`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`'
+
 
