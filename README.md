@@ -7,8 +7,19 @@ Or, check out the GoGong App repo: https://github.com/sshadmand/GoGongApp
 
 # Server Setup
 
+## Clone Repo and Update Settings
+
+Clone this repo and change your working directory to this project's root folder.
+
+Before we build the Docker image, change the BASE_URL in the projects Django setting file (in the gogong folder):
+
+```
+BASE_API_URL = "http://your-url"
+```
+
 ## Deploying with Docker
-Once you have your server setup with docker installed, clone this repo and change your working directory to this project's root folder. 
+
+Once you have your server setup with docker installed...
 
 First, build your image based on the local Dockerfile:
 
@@ -27,12 +38,6 @@ Finally, attach to the container and run apache (If anyone knows how to run apac
 ```
 #> sudo docker attach gogongserver
 [server-container-id]#> /etc/init.d/apache2 start
-```
-
-The server is up and running, but you will need to map your server's public URL so that shares generate properly. (If anyone knows how to set this in a Dockerfile LMK.). Do *__not__* end the URL in a slash.:
-
-```
-[server-container-id]#> export BASE_URL='http://your-server-ip-or-name'
 ```
 
 
