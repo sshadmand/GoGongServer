@@ -17,7 +17,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 BASE_API_URL = "http://localhost:8000"
+BASE_API_URL_ENV = os.environ.get('BASE_URL')
+if BASE_API_URL_ENV:
+    print("Base URL set as:", BASE_API_URL_ENV)
+    BASE_API_URL = BASE_API_URL_ENV
+
 
 # Application definition
 
