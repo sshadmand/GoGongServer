@@ -11,7 +11,7 @@ Or, check out the GoGong App repo: https://github.com/sshadmand/GoGongApp
 
 Clone this repo and change your working directory to this project's root folder.
 
-Before we build the Docker image, change the BASE_URL in the projects Django setting file (in the gogong folder):
+Before we build the Docker image, change the BASE_URL in the project's Django setting file (in the gogong folder):
 
 ```
 BASE_API_URL = "http://your-url"
